@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/Web1001-BookTracking.props" />
+</Project>
