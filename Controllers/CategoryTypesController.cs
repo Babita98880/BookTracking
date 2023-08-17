@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 namespace Web1001_BookTracking.Controllers
 {
-    public class CategoriesController : Controller
+    public class CategoryTypesController : Controller
     {
         private readonly ILogger<CategoriesController> _logger;
         private readonly BookContext _db;
 
-        public CategoriesController(BookContext context, ILogger<CategoriesController> logger)
+        public CategoryTypesController(BookContext context, ILogger<CategoriesController> logger)
         {
             _db = context;
             _logger = logger;
@@ -19,52 +19,44 @@ namespace Web1001_BookTracking.Controllers
         // get category list with category type
         public async Task<IActionResult> Index()
         {
-              var categories = await _db.Categories
-                .Include(c => c.CategoryType) // Include CategoryType navigation property
+              var categoryTypes = await _db.CategoryTypes
                 .ToListAsync();
-                return View(categories);
+                return View(categoryTypes);
             
         }
 
         public IActionResult Create()
         {
-            ViewBag.CategoryTypes = _db.CategoryTypes.ToList();
-            LoggerExtensions.LogInformation(_logger, "CategoryTypes count: {Count}", ViewBag.CategoryTypes.Count);
             return View();
         }
+     
 
              // add new category
         [HttpPost]
-        public async Task<IActionResult> Create(Category category)
+        public async Task<IActionResult> Create(CategoryType categoryTypes)
         {
 
             if (ModelState.IsValid)
             {
-                // Check if the selected TypeId is valid
-                var validCategoryType = await _db.CategoryTypes.FindAsync(category.TypeId);
-                if (validCategoryType == null)
-                {
-                    ModelState.AddModelError("TypeId", "Invalid Category Type selected.");
-                    return View(category);
-                }
-                _db.Categories.Add(category);
+                
+                _db.CategoryTypes.Add(categoryTypes);
                 await _db.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
 
-            return View(category);
+            return View(categoryTypes);
         }
 
     // Delete a category
         public async Task<IActionResult> Delete(int id)
         {
-            var category = await _db.Categories.FindAsync(id);
-            if (category == null)
+            var categoryTypes = await _db.CategoryTypes.FindAsync(id);
+            if (categoryTypes == null)
             {
                 return NotFound();
             }
 
-            _db.Categories.Remove(category);
+            _db.CategoryTypes.Remove(categoryTypes);
             await _db.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));

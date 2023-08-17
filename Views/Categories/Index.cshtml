@@ -1,14 +1,16 @@
 ﻿@model List<Category>
 
-<h2>Categories</h2>
-  <a class="nav-link text-dark" asp-area="" asp-controller="Categories" asp-action="Create">Add New Category</a>
-                    
+<h5>Category List</h5>
+  <a class="btn addBtn" asp-area="" asp-controller="Categories" asp-action="Create">Add Category</a>
+                 @* <button class="addBtn" asp-area="" asp-controller="Categories" asp-action="Create">Add New Category</button> *@
+             
 <table class="table">
     <thead>
         <tr>
             <th>Name</th>
             <th>Type</th>
             <th>Description</th>
+              <th>Action</th> 
         </tr>
     </thead>
     <tbody>
@@ -21,6 +23,9 @@
                     @category.CategoryType.Name
                 }</td> 
                 <td>@category.Description</td>
+                 <td>
+                    <a asp-controller="Categories" asp-action="Delete" asp-route-id="@category.Id" class="btn btn-delete btn-sm">Delete</a>
+                </td>
             </tr>
         }
     </tbody>

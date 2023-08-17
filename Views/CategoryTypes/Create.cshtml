@@ -1,0 +1,11 @@
+@model CategoryType
+
+<h5 class="add-cat">Add Category Type</h5>
+<a  asp-controller="CategoryTypes" asp-action="Index" class="back">Back to Category Type</a>
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" required />
+    </div>
+    <button type="submit" class="btn submit">Save</button>
+</form>

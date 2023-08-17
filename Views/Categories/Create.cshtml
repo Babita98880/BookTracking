@@ -1,15 +1,15 @@
 @model Category
 
-<h2>Add Category</h2>
-
+<h5 class="add-cat">Add Category</h5>
+<a  asp-controller="Categories" asp-action="Index" class="back">Back to Category</a>
 <form asp-action="Create">
     <div class="form-group">
         <label asp-for="Name"></label>
-        <input asp-for="Name" class="form-control" />
+        <input asp-for="Name" class="form-control" required />
     </div>
     <div class="form-group">
         <label asp-for="TypeId">Select category type</label>
-        <select asp-for="TypeId" class="form-control">
+        <select asp-for="TypeId" class="form-control" required>
             @foreach (var categoryType in ViewBag.CategoryTypes)
             {
                 <option value="@categoryType.Id">@categoryType.Name</option>
@@ -18,7 +18,7 @@
     </div>
     <div class="form-group">
         <label asp-for="Description"></label>
-        <textarea asp-for="Description" class="form-control"></textarea>
+        <textarea asp-for="Description" class="form-control" required></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Create</button>
+    <button type="submit" class="btn submit">Save</button>
 </form>

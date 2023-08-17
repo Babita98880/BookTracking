@@ -1,0 +1,26 @@
+﻿@model List<CategoryType>
+
+<h5>Category Type List</h5>
+  <a class="btn addBtn" asp-area="" asp-controller="CategoryTypes" asp-action="Create">Add Category Type</a>
+                 @* <button class="addBtn" asp-area="" asp-controller="Categories" asp-action="Create">Add New Category</button> *@
+             
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Action</th> 
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var categoryTypes in Model)
+        {
+            <tr>
+                <td>@categoryTypes.Name</td>
+                
+                 <td>
+                    <a asp-controller="CategoryTypes" asp-action="Delete" asp-route-id="@categoryTypes.Id" class="btn btn-delete btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

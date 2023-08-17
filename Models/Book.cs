@@ -6,5 +6,5 @@ public class Book
     public int CategoryId { get; set; } // Foreign key to Category
     public string Author { get; set; }
 
-    public Category Category { get; set; } // Navigation property
+    public Category? Category { get; set; } // Navigation property
 }

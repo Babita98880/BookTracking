@@ -24070,6 +24070,21 @@
       "FilePath": "/Users/babitarawat/Documents/BookTracking/Views/Categories/Index.cshtml",
       "TargetPath": "Views\\Categories\\Index.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/babitarawat/Documents/BookTracking/Views/Home/Create.cshtml",
+      "TargetPath": "Views\\Home\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/babitarawat/Documents/BookTracking/Views/CategoryTypes/Create.cshtml",
+      "TargetPath": "Views\\CategoryTypes\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/babitarawat/Documents/BookTracking/Views/CategoryTypes/Index.cshtml",
+      "TargetPath": "Views\\CategoryTypes\\Index.cshtml",
+      "FileKind": "mvc"
     }
   ]
 }
