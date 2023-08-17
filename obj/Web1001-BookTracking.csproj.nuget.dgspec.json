@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/babitarawat/Desktop/web/Web1001-BookTracking/Web1001-BookTracking.csproj": {}
+    "/Users/babitarawat/Documents/BookTracking/Web1001-BookTracking.csproj": {}
   },
   "projects": {
-    "/Users/babitarawat/Desktop/web/Web1001-BookTracking/Web1001-BookTracking.csproj": {
+    "/Users/babitarawat/Documents/BookTracking/Web1001-BookTracking.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/babitarawat/Desktop/web/Web1001-BookTracking/Web1001-BookTracking.csproj",
+        "projectUniqueName": "/Users/babitarawat/Documents/BookTracking/Web1001-BookTracking.csproj",
         "projectName": "Web1001-BookTracking",
-        "projectPath": "/Users/babitarawat/Desktop/web/Web1001-BookTracking/Web1001-BookTracking.csproj",
+        "projectPath": "/Users/babitarawat/Documents/BookTracking/Web1001-BookTracking.csproj",
         "packagesPath": "/Users/babitarawat/.nuget/packages/",
-        "outputPath": "/Users/babitarawat/Desktop/web/Web1001-BookTracking/obj/",
+        "outputPath": "/Users/babitarawat/Documents/BookTracking/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/babitarawat/.nuget/NuGet/NuGet.Config"

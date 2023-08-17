@@ -9,7 +9,7 @@ namespace Web1001_BookTracking.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "categoryTypes",
+                name: "CategoryTypes",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
@@ -18,7 +18,7 @@ namespace Web1001_BookTracking.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_categoryTypes", x => x.Id);
+                    table.PrimaryKey("PK_CategoryTypes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -36,9 +36,9 @@ namespace Web1001_BookTracking.Migrations
                 {
                     table.PrimaryKey("PK_Categories", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Categories_categoryTypes_CategoryTypeId",
+                        name: "FK_Categories_CategoryTypes_CategoryTypeId",
                         column: x => x.CategoryTypeId,
-                        principalTable: "categoryTypes",
+                        principalTable: "CategoryTypes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -85,7 +85,7 @@ namespace Web1001_BookTracking.Migrations
                 name: "Categories");
 
             migrationBuilder.DropTable(
-                name: "categoryTypes");
+                name: "CategoryTypes");
         }
     }
 }

@@ -85,7 +85,7 @@ namespace Web1001_BookTracking.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("categoryTypes");
+                    b.ToTable("CategoryTypes");
                 });
 
             modelBuilder.Entity("Book", b =>

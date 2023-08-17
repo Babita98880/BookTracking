@@ -1,0 +1,27 @@
+﻿@model List<Category>
+
+<h2>Categories</h2>
+  <a class="nav-link text-dark" asp-area="" asp-controller="Categories" asp-action="Create">Add New Category</a>
+                    
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td>@category.Name</td>
+                 <td>@if (category.CategoryType != null)
+                {
+                    @category.CategoryType.Name
+                }</td> 
+                <td>@category.Description</td>
+            </tr>
+        }
+    </tbody>
+</table>

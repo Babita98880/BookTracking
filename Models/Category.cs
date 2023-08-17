@@ -4,7 +4,6 @@ public class Category
     public string Name { get; set; }
     public int TypeId { get; set; } // Foreign key to CategoryType
     public string Description { get; set; }
-
-    public CategoryType CategoryType { get; set; } // Navigation property
-    public List<Book> Books { get; set; } // Navigation property
+    public CategoryType? CategoryType { get; set; } // Navigation property
+public List<Book>? Books { get; set; } // Nullable collection
 }

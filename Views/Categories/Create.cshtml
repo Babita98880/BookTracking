@@ -1,0 +1,24 @@
+@model Category
+
+<h2>Add Category</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="TypeId">Select category type</label>
+        <select asp-for="TypeId" class="form-control">
+            @foreach (var categoryType in ViewBag.CategoryTypes)
+            {
+                <option value="@categoryType.Id">@categoryType.Name</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
